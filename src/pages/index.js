@@ -2,7 +2,33 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Card from '../components/Card';
 import Section from '../components/Section';
-// import Wave from '../components/Wave'
+import staticdata from '../../staticdata.json'
+import Cell from '../components/cell';
+import styled from 'styled-components';
+
+const SectionCaption = styled.p`
+  font-weight:600;
+  font-size:18px;
+  text-transform:uppercase;
+  color:#FF0000;
+  text-align: center;
+`
+
+const SectionCellGroup = styled.div`
+  max-width:800px;
+  margin: 0 auto 100px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap:20px;
+  padding: 0 20px;
+
+  @media (max-width=800px) {
+    grid-tempalte-columns: repeat(1, 1fr);
+    
+  }
+
+`
+
 
 const IndexPage = () => (
   <div>
@@ -41,7 +67,7 @@ const IndexPage = () => (
       image="https://d9m3e2gledt2x.cloudfront.net/images/pinapp/cover2.png"
       /> 
       <Card
-      title="React for Xectors"
+      title="React for Xampions"
       text="Whaversd"
       image="https://d9m3e2gledt2x.cloudfront.net/images/pinapp/cover2.png"
       /> 
@@ -55,6 +81,15 @@ const IndexPage = () => (
       text="Styled components allow you to take your CSS to the next level. Not only does it allow you to nest your CSS like in SCSS, but it also gives you the power to use javascript and transfer Props to your CSS, making it super customiza"
     />
 
+    
+    <SectionCaption>12 sections, 6 hours, 3 lifes, 1.5 slips</SectionCaption>
+    <SectionCellGroup>
+      {staticdata.cells.map(cell => (
+      <Cell 
+        title={cell.title}
+        image={cell.image} />
+    ))}
+    </SectionCellGroup>
   </div>
 )
 
