@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Wave from './Wave';
+// import Wave from './Wave';
 
 const SectionGroup = styled.div`
     position:relative;
@@ -63,13 +63,11 @@ const WaveTop = styled.div`
 const Section = props => (
 
     <SectionGroup image={props.image}>
-        <WaveTop><Wave /></WaveTop>
             <SectionLogo src={props.logo} />
             <SectionTitleGroup>
                 <SectionTitle>{props.title}</SectionTitle>
                 <SectionText>{props.text}</SectionText>
             </SectionTitleGroup>
-        <WaveBottom><Wave /></WaveBottom>
     </SectionGroup>
 )
 

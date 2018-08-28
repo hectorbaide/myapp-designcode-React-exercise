@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Card from '../components/Card';
 import Section from '../components/Section';
-import Wave from '../components/Wave'
+// import Wave from '../components/Wave'
 
 const IndexPage = () => (
   <div>
